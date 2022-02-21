@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import Bird from "./bird";
 import ShootBirdConfig from "./shootbirdConfig";
 
 const {ccclass, property} = cc._decorator;
@@ -28,6 +29,8 @@ export default class Bow extends cc.Component {
     birdCount: cc.Label = null;
 
     speed: number = 800;
+
+    delay: number = 0.3;
 
     static birdOnScreen: number = 0;
 
@@ -57,8 +60,24 @@ export default class Bow extends cc.Component {
     }
 
     update (dt) {
-        this.rockCount.string = ShootBirdConfig.rockCount+'';
-        this.birdCount.string = ShootBirdConfig.birdCount+'';
+        // this.delay -= dt;
+        // if (Bow.birdOnScreen < 30 && ShootBirdConfig.birdCount >= 30 && this.delay<=0) {
+        //     this.delay = 0.3;
+        //     this.rockCount.string = ShootBirdConfig.rockCount + '';
+        //     this.birdCount.string = ShootBirdConfig.birdCount + '';
+        //     let bird = cc.instantiate(this.bird);
+        //     bird.parent = this.node;
+        //     bird.y = this.getRandomInt(-100, 800);
+        //     if (this.getRandomInt(0, 3) == 1) {
+        //         bird.x = -1000;
+        //         bird.getComponent(Bird).moveBeizer(4, cc.v2(bird.x + 700, bird.y + 700), cc.v2(bird.x + 1400, bird.y - 700), cc.v2(bird.x + 2100, bird.y));
+        //     }
+        //     else {
+        //         bird.x = 1000;
+        //         bird.getComponent(Bird).moveBeizer(4, cc.v2(bird.x - 700, bird.y + 700), cc.v2(bird.x - 1400, bird.y - 700), cc.v2(bird.x - 2100, bird.y));
+        //     }
+        //     Bow.birdOnScreen++;
+        // }
         // if(Bow.birdOnScreen < 10 && ShootBirdConfig.birdCount >= 10)
         // {
         //     let bird = cc.instantiate(this.bird);

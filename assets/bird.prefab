@@ -132,8 +132,8 @@
         0,
         0,
         1,
-        0.07,
-        0.07,
+        0.1,
+        0.1,
         1
       ]
     },
@@ -170,7 +170,7 @@
     "_cacheMode": 0,
     "loop": true,
     "premultipliedAlpha": true,
-    "timeScale": 2,
+    "timeScale": 3,
     "_accTime": 0,
     "_playCount": 0,
     "_frameCache": null,
@@ -292,6 +292,9 @@
       "__id__": 1
     },
     "_enabled": true,
+    "birdSprite": {
+      "__id__": 2
+    },
     "_id": ""
   },
   {
