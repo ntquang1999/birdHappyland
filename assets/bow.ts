@@ -16,6 +16,9 @@ export default class Bow extends cc.Component {
     @property(cc.Node)
     touch: cc.Node = null;
 
+    @property(cc.Node)
+    slingshot: cc.Node = null;
+
     @property(cc.Prefab)
     rock: cc.Prefab = null;
 
@@ -36,10 +39,9 @@ export default class Bow extends cc.Component {
 
 
     onLoad () {
-        this.speed = ShootBirdConfig.rockSpeed;
         let physic_mng = cc.director.getPhysicsManager();
         physic_mng.enabled = true;
-        physic_mng.gravity = cc.v2(0,0);
+        physic_mng.gravity = cc.v2(0,-400);
         this.speed = ShootBirdConfig.rockSpeed;
         this.touch.on(cc.Node.EventType.TOUCH_END, (ev: cc.Event.EventTouch)=>{this.shoot(ev)});
     }
@@ -51,11 +53,12 @@ export default class Bow extends cc.Component {
             ShootBirdConfig.rockCount--;
             let wp = ev.getLocation();
             let pos = this.node.convertToNodeSpaceAR(wp);
-            //let angle = cc.misc.radiansToDegrees(Math.atan(wp.x/wp.y));
             let rock = cc.instantiate(this.rock);
             rock.parent = this.node;
             let rad = Math.atan2(pos.y,pos.x);
             rock.angle = cc.misc.radiansToDegrees(rad);
+            this.slingshot.angle = cc.misc.radiansToDegrees(rad) -90;
+            console.log()
             rock.getComponent(cc.RigidBody).linearVelocity = cc.v2(Math.cos(rad)*this.speed,Math.sin(rad)*this.speed);
         }
     }

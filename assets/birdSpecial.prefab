@@ -165,7 +165,7 @@
     ],
     "paused": false,
     "defaultSkin": "default",
-    "defaultAnimation": "animtion0",
+    "defaultAnimation": "fly",
     "_preCacheMode": 0,
     "_cacheMode": 0,
     "loop": true,
@@ -176,13 +176,13 @@
     "_frameCache": null,
     "_curFrame": null,
     "_skeletonCache": null,
-    "_animationName": "animtion0",
+    "_animationName": "fly",
     "_animationQueue": [],
     "_headAniInfo": null,
     "_playTimes": 0,
     "_isAniComplete": true,
     "_N$skeletonData": {
-      "__uuid__": "62cf0206-1e4e-4763-b62a-e0ca8fd05b63"
+      "__uuid__": "da545fa9-90e2-4f17-b9ce-b96fe3d090ac"
     },
     "_N$_defaultCacheMode": 0,
     "_N$debugSlots": false,

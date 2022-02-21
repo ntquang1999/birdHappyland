@@ -21,6 +21,10 @@ export default class BirdGift extends cc.Component {
 
     isLeftToRight: boolean = true;
 
+    id: number = 0;
+
+    speed: number = 1.5;
+
     hitpoint = 3;
 
 
@@ -37,7 +41,8 @@ export default class BirdGift extends cc.Component {
         else
             this.node.angle = 20+ cc.misc.radiansToDegrees(rad);
         this.lastPosition.x = this.node.x;
-        this.lastPosition.y = this.node.y;      
+        this.lastPosition.y = this.node.y; 
+        if(this.node.y < -700) this.node.destroy();     
     }
     onBeginContact(contact, selfCollider:cc.BoxCollider, otherCollider:cc.BoxCollider)
     {
@@ -51,19 +56,24 @@ export default class BirdGift extends cc.Component {
 
     SelfDestruct(shot: boolean)
     {
-        this.node.destroy();
         Spawner.birdOnScreen--;
-        Spawner.giftSpawned = false;
+        //Spawner.giftSpawned = false;
+        
         if(shot)
         {
             ShootBirdConfig.birdCount--;
-            Spawner.giftAvailable = false;
+            cc.Tween.stopAllByTarget(this.node);
+            this.birdSprite.getComponent(sp.Skeleton).animation = "die";
+        }
+        else
+        {
+            ShootBirdConfig.birdList.push({"id": this.id, "type": 1, "hitpoint": this.hitpoint, "speed": this.speed});
+            this.node.destroy();
         }     
     }
 
-    moveBeizer(duration, firstPoint, secondPoint, lastPoint)
+    moveBeizer(firstPoint, secondPoint, lastPoint)
     {
-        duration = duration/2;
         if(this.node.x < lastPoint.x)
         {
             this.birdSprite.scaleX = -this.birdSprite.scaleX;
@@ -71,12 +81,11 @@ export default class BirdGift extends cc.Component {
         }
         else
             this.isLeftToRight = true;
-        cc.tween(this.node).bezierTo(duration,firstPoint, secondPoint, lastPoint).call(()=>{this.SelfDestruct(false)}).start();
+        cc.tween(this.node).bezierTo(this.speed,firstPoint, secondPoint, lastPoint).call(()=>{this.SelfDestruct(false)}).start();
     }
 
-    moveStraight(duration, lastPoint)
+    moveStraight(lastPoint)
     {
-        duration = duration/2;
         if(this.node.x < lastPoint.x)
         {
             this.birdSprite.scaleX = -this.birdSprite.scaleX;
@@ -84,7 +93,7 @@ export default class BirdGift extends cc.Component {
         }
         else
             this.isLeftToRight = true;
-        cc.tween(this.node).to(duration,lastPoint).call(()=>{this.SelfDestruct(false)}).start();
+        cc.tween(this.node).to(this.speed,lastPoint).call(()=>{this.SelfDestruct(false)}).start();
     }
     
     getRandomInt(min, max) {

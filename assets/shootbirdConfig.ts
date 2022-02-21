@@ -4,7 +4,7 @@ const {ccclass, property} = cc._decorator;
 export default class ShootBirdConfig extends cc.Component {
     static rockSpeed: number = 1300;
     static birdSpeed: number = 300;
-    static birdCount: number = 30;
+    static birdCount: number = 10;
     static rockCount: number = 30;
     static damage: number = 1;
     static giftAvailable = true;
@@ -26,14 +26,19 @@ export default class ShootBirdConfig extends cc.Component {
 
     static initFakeData()
     {
-        this.rockSpeed = 1500;
-        this.birdCount = 30;
+        this.rockSpeed = 3000;
+        this.birdCount = 5;
         this.rockCount = 50;
         this.damage = 1;
-        this.birdList.push({"id": 0,"type": 1, "hitpoint": 3, "speed": 1.5});
+        
         for(let i=0;i<this.birdCount-1;i++)
         {
-            this.birdList.push({"id": 0,"type": 0, "hitpoint": 1, "speed": 3});
+            this.birdList.push({"id": 0,"type": 0, "hitpoint": 1, "speed": 5});
         }
+        this.birdList.push({"id": 0,"type": 1, "hitpoint": 3, "speed": 2.5});
     }
+
+
 }
+
+ShootBirdConfig.initFakeData();

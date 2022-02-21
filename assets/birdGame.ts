@@ -23,6 +23,10 @@ export default class Bird extends cc.Component {
 
     hitpoint = 1;
 
+    id = 0;
+
+    speed = 3;
+
 
     protected start(): void {
         this.lastPosition.x = this.node.x;
@@ -37,7 +41,8 @@ export default class Bird extends cc.Component {
         else
             this.node.angle = 20+ cc.misc.radiansToDegrees(rad);
         this.lastPosition.x = this.node.x;
-        this.lastPosition.y = this.node.y;      
+        this.lastPosition.y = this.node.y; 
+        if(this.node.y < -700) this.node.destroy();     
     }
     onBeginContact(contact, selfCollider:cc.BoxCollider, otherCollider:cc.BoxCollider)
     {
@@ -51,13 +56,22 @@ export default class Bird extends cc.Component {
 
     SelfDestruct(shot: boolean)
     {
-        this.node.destroy();
+        
         Spawner.birdOnScreen--;
         if(shot)
+        {
             ShootBirdConfig.birdCount--;
+            cc.Tween.stopAllByTarget(this.node);
+            this.birdSprite.getComponent(sp.Skeleton).animation = "die";
+            //Spawner.giftAvailable = false;
+        }
+        else
+        {
+            ShootBirdConfig.birdList.push({"id": this.id, "type": 0, "hitpoint": this.hitpoint, "speed": this.speed});
+        }     
     }
 
-    moveBeizer(duration, firstPoint, secondPoint, lastPoint)
+    moveBeizer(firstPoint, secondPoint, lastPoint)
     {
         if(this.node.x < lastPoint.x)
         {
@@ -66,10 +80,10 @@ export default class Bird extends cc.Component {
         }
         else
             this.isLeftToRight = true;
-        cc.tween(this.node).bezierTo(duration,firstPoint, secondPoint, lastPoint).call(()=>{this.SelfDestruct(false)}).start();
+        cc.tween(this.node).bezierTo(this.speed,firstPoint, secondPoint, lastPoint).call(()=>{this.SelfDestruct(false)}).start();
     }
 
-    moveStraight(duration, lastPoint)
+    moveStraight(lastPoint)
     {
         if(this.node.x < lastPoint.x)
         {
@@ -78,7 +92,7 @@ export default class Bird extends cc.Component {
         }
         else
             this.isLeftToRight = true;
-        cc.tween(this.node).to(duration,lastPoint).call(()=>{this.SelfDestruct(false)}).start();
+        cc.tween(this.node).to(this.speed,lastPoint).call(()=>{this.SelfDestruct(false)}).start();
     }
     
     getRandomInt(min, max) {

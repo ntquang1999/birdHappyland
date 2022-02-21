@@ -40,25 +40,31 @@ export default class Spawner extends cc.Component {
         this.beizerStepX = (this.screenSize.x + 500)/3;
         this.beizerStepY = 700;
         Spawner.giftAvailable = ShootBirdConfig.giftAvailable;
-        //this.totalBird = ShootBirdConfig.birdCount;
     }
 
     update (dt) {
         this.delay -= dt;
-        if (Spawner.birdOnScreen < this.totalBird && ShootBirdConfig.birdCount > this.totalBird && this.delay<=0) {
+        if (Spawner.birdOnScreen < this.totalBird && this.delay<=0) {
+            console.log(ShootBirdConfig.birdList.length)
             this.delay = this.delayConfig;
             let bird;
             let isSpecial = false;
-            if(Spawner.giftAvailable && !Spawner.giftSpawned)
+            let birdInfo = ShootBirdConfig.birdList.pop();
+            if(birdInfo == null) return;
+            if(birdInfo.type == 1)
             {
-                console.log("grrr");
                 bird = cc.instantiate(this.birdSpecial);
-                Spawner.giftSpawned = true;
+                bird.getComponent(BirdGift).hitpoint = birdInfo.hitpoint;
+                bird.getComponent(BirdGift).speed = birdInfo.speed;
+                bird.getComponent(BirdGift).id = birdInfo.id;
                 isSpecial = true;
             }
             else
             {
                 bird = cc.instantiate(this.bird);
+                bird.getComponent(Bird).hitpoint = birdInfo.hitpoint;
+                bird.getComponent(Bird).speed = birdInfo.speed;
+                bird.getComponent(Bird).id = birdInfo.id;
             }
             bird.parent = this.node;
             bird.y = this.getRandomInt(-this.screenSize.y/2+300, this.screenSize.y/2);
@@ -78,11 +84,11 @@ export default class Spawner extends cc.Component {
                 }
                 if(isSpecial)
                 {
-                    bird.getComponent(BirdGift).moveBeizer(this.duralation, this.firstPont, this.secondPoint, this.lastPoint);
+                    bird.getComponent(BirdGift).moveBeizer(this.firstPont, this.secondPoint, this.lastPoint);
                 } 
                 else
                 {
-                    bird.getComponent(Bird).moveBeizer(this.duralation, this.firstPont, this.secondPoint, this.lastPoint);
+                    bird.getComponent(Bird).moveBeizer(this.firstPont, this.secondPoint, this.lastPoint);
                 } 
                 
             }
@@ -102,11 +108,11 @@ export default class Spawner extends cc.Component {
                 }
                 if(isSpecial)
                 {
-                    bird.getComponent(BirdGift).moveBeizer(this.duralation, this.firstPont, this.secondPoint, this.lastPoint);
+                    bird.getComponent(BirdGift).moveBeizer(this.firstPont, this.secondPoint, this.lastPoint);
                 } 
                 else
                 {
-                    bird.getComponent(Bird).moveBeizer(this.duralation, this.firstPont, this.secondPoint, this.lastPoint);
+                    bird.getComponent(Bird).moveBeizer(this.firstPont, this.secondPoint, this.lastPoint);
                 } 
             }
             Spawner.birdOnScreen++;
