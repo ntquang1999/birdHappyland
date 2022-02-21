@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "right_button",
+    "_name": "birdSpecial",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -107,8 +107,8 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
+      "g": 224,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
@@ -200,7 +200,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "d2aGBJYPhOop8oEv7RfThv",
+    "fileId": "72u6yCXTNJgpZh5Y8Z+13E",
     "sync": false
   },
   {
@@ -285,7 +285,7 @@
     "_id": ""
   },
   {
-    "__type__": "6b4849yDQhKA7BYPflzTz9k",
+    "__type__": "dee16SKgd9KX6rQ3x58G3vs",
     "_name": "",
     "_objFlags": 0,
     "node": {

@@ -5,13 +5,14 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
-//import Bow from "./bow";
-//import ShootBirdConfig from "./shootbirdConfig";
+import Spawner from "./BirdSpawnerGame";
+import Bow from "./bow";
+import ShootBirdConfig from "./shootbirdConfig";
 
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class Bird extends cc.Component {
+export default class BirdGift extends cc.Component {
 
     @property(cc.Node)
     birdSprite: cc.Node = null;
@@ -19,6 +20,8 @@ export default class Bird extends cc.Component {
     lastPosition = cc.v2(0,0);
 
     isLeftToRight: boolean = true;
+
+    hitpoint = 3;
 
 
     protected start(): void {
@@ -36,20 +39,31 @@ export default class Bird extends cc.Component {
         this.lastPosition.x = this.node.x;
         this.lastPosition.y = this.node.y;      
     }
-    // onBeginContact(contact, selfCollider:cc.BoxCollider, otherCollider:cc.BoxCollider)
-    // {
-    //     if(otherCollider.tag != 1)
-    //     {
-    //         this.node.destroy();
-    //         Bow.birdOnScreen--;
-    //         ShootBirdConfig.birdCount--;
-    //     }
-        
-        
-    // }
+    onBeginContact(contact, selfCollider:cc.BoxCollider, otherCollider:cc.BoxCollider)
+    {
+        if(otherCollider.tag != 1)
+        {
+            this.hitpoint-= ShootBirdConfig.damage;
+            if(this.hitpoint <= 0)
+                this.SelfDestruct(true);
+        }    
+    }
+
+    SelfDestruct(shot: boolean)
+    {
+        this.node.destroy();
+        Spawner.birdOnScreen--;
+        Spawner.giftSpawned = false;
+        if(shot)
+        {
+            ShootBirdConfig.birdCount--;
+            Spawner.giftAvailable = false;
+        }     
+    }
 
     moveBeizer(duration, firstPoint, secondPoint, lastPoint)
     {
+        duration = duration/2;
         if(this.node.x < lastPoint.x)
         {
             this.birdSprite.scaleX = -this.birdSprite.scaleX;
@@ -57,11 +71,12 @@ export default class Bird extends cc.Component {
         }
         else
             this.isLeftToRight = true;
-        cc.tween(this.node).bezierTo(duration,firstPoint, secondPoint, lastPoint).call(()=>{this.node.destroy();}).start();
+        cc.tween(this.node).bezierTo(duration,firstPoint, secondPoint, lastPoint).call(()=>{this.SelfDestruct(false)}).start();
     }
 
     moveStraight(duration, lastPoint)
     {
+        duration = duration/2;
         if(this.node.x < lastPoint.x)
         {
             this.birdSprite.scaleX = -this.birdSprite.scaleX;
@@ -69,7 +84,7 @@ export default class Bird extends cc.Component {
         }
         else
             this.isLeftToRight = true;
-        cc.tween(this.node).to(duration,lastPoint).call(()=>{this.node.destroy();}).start();
+        cc.tween(this.node).to(duration,lastPoint).call(()=>{this.SelfDestruct(false)}).start();
     }
     
     getRandomInt(min, max) {
@@ -80,3 +95,4 @@ export default class Bird extends cc.Component {
 
     
 }
+

@@ -5,7 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
-import Bird from "./bird";
+import Bird from "./birdGame";
 import ShootBirdConfig from "./shootbirdConfig";
 
 const {ccclass, property} = cc._decorator;
@@ -36,6 +36,7 @@ export default class Bow extends cc.Component {
 
 
     onLoad () {
+        this.speed = ShootBirdConfig.rockSpeed;
         let physic_mng = cc.director.getPhysicsManager();
         physic_mng.enabled = true;
         physic_mng.gravity = cc.v2(0,0);
@@ -45,7 +46,7 @@ export default class Bow extends cc.Component {
 
     shoot(ev: cc.Event.EventTouch)
     {
-        if(ShootBirdConfig.rockCount>=0)
+        if(ShootBirdConfig.rockCount>0)
         {
             ShootBirdConfig.rockCount--;
             let wp = ev.getLocation();
@@ -60,47 +61,8 @@ export default class Bow extends cc.Component {
     }
 
     update (dt) {
-        // this.delay -= dt;
-        // if (Bow.birdOnScreen < 30 && ShootBirdConfig.birdCount >= 30 && this.delay<=0) {
-        //     this.delay = 0.3;
-        //     this.rockCount.string = ShootBirdConfig.rockCount + '';
-        //     this.birdCount.string = ShootBirdConfig.birdCount + '';
-        //     let bird = cc.instantiate(this.bird);
-        //     bird.parent = this.node;
-        //     bird.y = this.getRandomInt(-100, 800);
-        //     if (this.getRandomInt(0, 3) == 1) {
-        //         bird.x = -1000;
-        //         bird.getComponent(Bird).moveBeizer(4, cc.v2(bird.x + 700, bird.y + 700), cc.v2(bird.x + 1400, bird.y - 700), cc.v2(bird.x + 2100, bird.y));
-        //     }
-        //     else {
-        //         bird.x = 1000;
-        //         bird.getComponent(Bird).moveBeizer(4, cc.v2(bird.x - 700, bird.y + 700), cc.v2(bird.x - 1400, bird.y - 700), cc.v2(bird.x - 2100, bird.y));
-        //     }
-        //     Bow.birdOnScreen++;
-        // }
-        // if(Bow.birdOnScreen < 10 && ShootBirdConfig.birdCount >= 10)
-        // {
-        //     let bird = cc.instantiate(this.bird);
-        //     bird.parent = this.node;
-        //     bird.y = this.getRandomInt(-100,800);
-        //     if(this.getRandomInt(0,2) == 1)
-        //     {
-        //         bird.x = -850;
-        //     }
-        //     else
-        //     {
-        //         bird.x = 850;
-        //     }
-        //     if(this.getRandomInt(0,2) == 1)
-        //     {
-        //         bird.getComponent(cc.RigidBody).linearVelocity = cc.v2(0,this.getRandomInt(100,ShootBirdConfig.birdSpeed));
-        //     }
-        //     else
-        //     {
-        //         bird.getComponent(cc.RigidBody).linearVelocity = cc.v2(0,-this.getRandomInt(100,ShootBirdConfig.birdSpeed));
-        //     }
-        //     Bow.birdOnScreen++;
-        // }
+        this.rockCount.string = ShootBirdConfig.rockCount + '';
+        this.birdCount.string = ShootBirdConfig.birdCount + '';
     }
 
     getRandomInt(min, max) {
