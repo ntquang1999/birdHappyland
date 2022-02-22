@@ -1,0 +1,125 @@
+
+bird.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+feathẻ1
+  rotate: false
+  xy: 906, 263
+  size: 77, 73
+  orig: 77, 73
+  offset: 0, 0
+  index: -1
+feathẻ2
+  rotate: false
+  xy: 908, 101
+  size: 90, 98
+  orig: 90, 98
+  offset: 0, 0
+  index: -1
+feathẻ3
+  rotate: false
+  xy: 919, 1
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+zig
+  rotate: false
+  xy: 1, 483
+  size: 221, 99
+  orig: 221, 99
+  offset: 0, 0
+  index: -1
+đá
+  rotate: false
+  xy: 909, 201
+  size: 50, 53
+  orig: 50, 53
+  offset: 0, 0
+  index: -1
+bird_3/Layer_27_copy
+  rotate: false
+  xy: 1, 351
+  size: 343, 130
+  orig: 343, 130
+  offset: 0, 0
+  index: -1
+Layer 36 copy 7
+  rotate: false
+  xy: 646, 357
+  size: 126, 116
+  orig: 126, 116
+  offset: 0, 0
+  index: -1
+eyes5
+  rotate: false
+  xy: 224, 483
+  size: 108, 98
+  orig: 108, 98
+  offset: 0, 0
+  index: -1
+eye6
+  rotate: false
+  xy: 961, 201
+  size: 39, 53
+  orig: 39, 53
+  offset: 0, 0
+  index: -1
+die_eyes1
+  rotate: false
+  xy: 771, 1
+  size: 146, 98
+  orig: 146, 98
+  offset: 0, 0
+  index: -1
+zag
+  rotate: false
+  xy: 1, 1
+  size: 491, 348
+  orig: 491, 348
+  offset: 0, 0
+  index: -1
+bird_3/Layer_29
+  rotate: false
+  xy: 494, 1
+  size: 275, 354
+  orig: 275, 354
+  offset: 0, 0
+  index: -1
+Layer 36 copy 6
+  rotate: false
+  xy: 346, 357
+  size: 298, 139
+  orig: 298, 139
+  offset: 0, 0
+  index: -1
+eyes1
+  rotate: false
+  xy: 771, 182
+  size: 135, 79
+  orig: 135, 79
+  offset: 0, 0
+  index: -1
+eyes4
+  rotate: false
+  xy: 774, 344
+  size: 133, 79
+  orig: 133, 79
+  offset: 0, 0
+  index: -1
+eyes2
+  rotate: false
+  xy: 771, 101
+  size: 135, 79
+  orig: 135, 79
+  offset: 0, 0
+  index: -1
+eyes3
+  rotate: false
+  xy: 771, 263
+  size: 133, 79
+  orig: 133, 79
+  offset: 0, 0
+  index: -1
