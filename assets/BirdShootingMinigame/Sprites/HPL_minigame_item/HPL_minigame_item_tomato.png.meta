@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "f5a64f67-a3f0-4a38-ac72-398bf87a9ad2",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 54,
+  "height": 65,
+  "platformSettings": {},
+  "subMetas": {
+    "HPL_minigame_item_tomato": {
+      "ver": "1.0.6",
+      "uuid": "19abe675-1c67-4b5a-bc62-67414d59991d",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "f5a64f67-a3f0-4a38-ac72-398bf87a9ad2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 54,
+      "height": 65,
+      "rawWidth": 54,
+      "rawHeight": 65,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,48 @@
+
+box_anim.png
+size: 512,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+box_anim/Layer_3
+  rotate: false
+  xy: 1, 635
+  size: 321, 85
+  orig: 321, 85
+  offset: 0, 0
+  index: -1
+box_anim/Layer_4
+  rotate: false
+  xy: 1, 523
+  size: 314, 110
+  orig: 314, 110
+  offset: 0, 0
+  index: -1
+box_anim/Layer_5
+  rotate: false
+  xy: 1, 1
+  size: 467, 399
+  orig: 467, 399
+  offset: 0, 0
+  index: -1
+box_anim/Layer_2
+  rotate: false
+  xy: 1, 722
+  size: 232, 60
+  orig: 232, 60
+  offset: 0, 0
+  index: -1
+box_anim/Layer_6
+  rotate: false
+  xy: 1, 402
+  size: 455, 119
+  orig: 455, 119
+  offset: 0, 0
+  index: -1
+box_anim/dasa
+  rotate: false
+  xy: 324, 523
+  size: 153, 143
+  orig: 153, 143
+  offset: 0, 0
+  index: -1

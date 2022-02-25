@@ -1,0 +1,104 @@
+
+kill_efffect.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Comp 1_00006
+  rotate: false
+  xy: 1, 478
+  size: 234, 232
+  orig: 500, 500
+  offset: 135, 135
+  index: -1
+Comp 1_00010
+  rotate: false
+  xy: 458, 712
+  size: 228, 212
+  orig: 500, 500
+  offset: 145, 160
+  index: -1
+Comp 1_00000
+  rotate: false
+  xy: 688, 925
+  size: 87, 91
+  orig: 500, 500
+  offset: 208, 210
+  index: -1
+Comp 1_00001
+  rotate: false
+  xy: 598, 241
+  size: 112, 117
+  orig: 500, 500
+  offset: 191, 201
+  index: -1
+Comp 1_00002
+  rotate: false
+  xy: 435, 241
+  size: 161, 176
+  orig: 500, 500
+  offset: 176, 156
+  index: -1
+Comp 1_00008
+  rotate: false
+  xy: 1, 1
+  size: 237, 238
+  orig: 500, 500
+  offset: 134, 132
+  index: -1
+Comp 1_00012
+  rotate: false
+  xy: 237, 478
+  size: 211, 214
+  orig: 500, 500
+  offset: 145, 159
+  index: -1
+Comp 1_00009
+  rotate: false
+  xy: 688, 712
+  size: 228, 211
+  orig: 500, 500
+  offset: 145, 160
+  index: -1
+Comp 1_00004
+  rotate: false
+  xy: 450, 478
+  size: 214, 208
+  orig: 500, 500
+  offset: 142, 149
+  index: -1
+Comp 1_00005
+  rotate: false
+  xy: 1, 712
+  size: 224, 218
+  orig: 500, 500
+  offset: 140, 145
+  index: -1
+Comp 1_00013
+  rotate: false
+  xy: 238, 241
+  size: 195, 202
+  orig: 500, 500
+  offset: 150, 171
+  index: -1
+Comp 1_00007
+  rotate: false
+  xy: 1, 241
+  size: 235, 235
+  orig: 500, 500
+  offset: 135, 133
+  index: -1
+Comp 1_00003
+  rotate: false
+  xy: 666, 478
+  size: 207, 202
+  orig: 500, 500
+  offset: 146, 152
+  index: -1
+Comp 1_00011
+  rotate: false
+  xy: 227, 712
+  size: 229, 213
+  orig: 500, 500
+  offset: 145, 159
+  index: -1

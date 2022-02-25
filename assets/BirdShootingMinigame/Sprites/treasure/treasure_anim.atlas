@@ -1,0 +1,48 @@
+
+treasure_anim.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+treasure_anim/Vector Smart Object_1
+  rotate: false
+  xy: 501, 1
+  size: 498, 330
+  orig: 498, 330
+  offset: 0, 0
+  index: -1
+treasure_anim/Vector Smart Object_0
+  rotate: false
+  xy: 1, 1
+  size: 498, 330
+  orig: 498, 330
+  offset: 0, 0
+  index: -1
+treasure_anim/Vector_Smart_Object
+  rotate: false
+  xy: 1, 551
+  size: 437, 243
+  orig: 437, 243
+  offset: 0, 0
+  index: -1
+treasure_anim/Layer_112
+  rotate: false
+  xy: 522, 333
+  size: 465, 231
+  orig: 465, 231
+  offset: 0, 0
+  index: -1
+treasure_anim/Group_19
+  rotate: false
+  xy: 1, 796
+  size: 263, 107
+  orig: 263, 107
+  offset: 0, 0
+  index: -1
+treasure_anim/Layer_111
+  rotate: false
+  xy: 1, 333
+  size: 519, 216
+  orig: 519, 216
+  offset: 0, 0
+  index: -1
